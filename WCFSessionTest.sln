@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Mulle.AzureDeploymentRoles", "Mulle.AzureDeploymentRoles\Mulle.AzureDeploymentRoles.ccproj", "{2B09C576-9D60-40BE-B91A-B7029D9AFD8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mulle.AzureServiceHost", "Mulle.AzureServiceHost\Mulle.AzureServiceHost.csproj", "{3FFC0996-46AF-4C5F-96BF-FD19391F63F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mulle.Client", "Mulle.Client\Mulle.Client.csproj", "{B0513EAE-0D7C-4F59-977C-335500E703AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mulle.Lib", "Mulle.Lib\Mulle.Lib.csproj", "{FA897E63-AEB7-4192-BDA8-03FA83F9FF3D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mulleonline.tfspreview.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Mulle.AzureDeploymentRoles\\Mulle.AzureDeploymentRoles.ccproj
+		SccProjectName1 = Mulle.AzureDeploymentRoles
+		SccLocalPath1 = Mulle.AzureDeploymentRoles
+		SccProjectUniqueName2 = Mulle.AzureServiceHost\\Mulle.AzureServiceHost.csproj
+		SccProjectName2 = Mulle.AzureServiceHost
+		SccLocalPath2 = Mulle.AzureServiceHost
+		SccProjectUniqueName3 = Mulle.Client\\Mulle.Client.csproj
+		SccProjectName3 = Mulle.Client
+		SccLocalPath3 = Mulle.Client
+		SccProjectUniqueName4 = Mulle.Lib\\Mulle.Lib.csproj
+		SccProjectName4 = Mulle.Lib
+		SccLocalPath4 = Mulle.Lib
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B09C576-9D60-40BE-B91A-B7029D9AFD8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B09C576-9D60-40BE-B91A-B7029D9AFD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B09C576-9D60-40BE-B91A-B7029D9AFD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B09C576-9D60-40BE-B91A-B7029D9AFD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FFC0996-46AF-4C5F-96BF-FD19391F63F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFC0996-46AF-4C5F-96BF-FD19391F63F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFC0996-46AF-4C5F-96BF-FD19391F63F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFC0996-46AF-4C5F-96BF-FD19391F63F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0513EAE-0D7C-4F59-977C-335500E703AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0513EAE-0D7C-4F59-977C-335500E703AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0513EAE-0D7C-4F59-977C-335500E703AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0513EAE-0D7C-4F59-977C-335500E703AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA897E63-AEB7-4192-BDA8-03FA83F9FF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA897E63-AEB7-4192-BDA8-03FA83F9FF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA897E63-AEB7-4192-BDA8-03FA83F9FF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA897E63-AEB7-4192-BDA8-03FA83F9FF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

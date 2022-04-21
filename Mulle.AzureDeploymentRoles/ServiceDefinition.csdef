@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="Mulle.AzureDeploymentRoles" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2012-05.1.7">
+  <WorkerRole name="Mulle.AzureServiceHost" vmsize="ExtraSmall">
+    <Endpoints>
+      <InputEndpoint name="port" protocol="tcp" port="9001" />
+      <InputEndpoint name="mexport" protocol="tcp" port="8001" />
+    </Endpoints>
+    <LocalResources>
+    </LocalResources>
+  </WorkerRole>
+</ServiceDefinition>

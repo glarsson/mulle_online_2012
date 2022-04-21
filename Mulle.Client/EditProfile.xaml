@@ -1,0 +1,21 @@
+﻿<Window x:Class="Mulle.Client.EditProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mulle - Edit Profile" Height="381" Width="736" Icon="mulle.ico">
+    <Grid Background="#FF878787">
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="10,315.04,0,0" VerticalAlignment="Top" Width="92" Click="Cancel_Click" FontFamily="Arial" FontSize="14.667" Height="25.96"/>
+        <Button Content="Save (upload)" HorizontalAlignment="Left" Margin="612,315.04,0,0" VerticalAlignment="Top" Width="106" Click="Save_Click" Height="25.96" FontFamily="Arial" FontSize="14.667"/>
+        <Image Name="imgPhoto" Source="{Binding _ProfilePicture, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="206" Margin="14,9,0,0" VerticalAlignment="Top" Width="206"/>
+        <Button Content="Edit profile picture" HorizontalAlignment="Left" Margin="38,221,0,0" VerticalAlignment="Top" Width="148" Click="EditPicture_Click" Height="25.96" FontFamily="Arial" FontSize="14.667"/>
+        <Label Content="Alias" HorizontalAlignment="Left" Margin="243,15,0,0" VerticalAlignment="Top" Width="93" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="14.667" Foreground="White" Height="26"/>
+        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="243,46,0,0" VerticalAlignment="Top" Width="93" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="14.667" Foreground="White" Height="26"/>
+        <Label Content="Rank" HorizontalAlignment="Left" Margin="243,77,0,0" VerticalAlignment="Top" Width="93" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="14.667" Foreground="White" Height="26"/>
+        <Label Content="Win/Loss" HorizontalAlignment="Left" Margin="243,108,0,0" VerticalAlignment="Top" Width="93" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="14.667" Foreground="White" Height="26"/>
+        <Label Content="Reputation" HorizontalAlignment="Left" Margin="242,139,0,0" VerticalAlignment="Top" Width="93" HorizontalContentAlignment="Right" FontFamily="Arial" FontSize="14.667" Foreground="White" Height="26"/>
+        <Label x:Name="aliasLabel" HorizontalAlignment="Left" Margin="340,15,0,0" VerticalAlignment="Top" Width="217" Height="26" FontFamily="Arial" FontSize="14.667"/>
+        <Label x:Name="emailLabel" HorizontalAlignment="Left" Margin="340,46,0,0" VerticalAlignment="Top" Width="217" Height="26" FontFamily="Arial" FontSize="14.667"/>
+        <Label x:Name="rankLabel" HorizontalAlignment="Left" Margin="340,77,0,0" VerticalAlignment="Top" Width="217" Height="26" FontFamily="Arial" FontSize="14.667"/>
+        <Label x:Name="winlossLabel" HorizontalAlignment="Left" Margin="340,108,0,0" VerticalAlignment="Top" Width="217" Height="26" FontFamily="Arial" FontSize="14.667"/>
+        <ProgressBar x:Name="reputationProgressBar" HorizontalAlignment="Left" Height="31" Margin="340,134,0,0" VerticalAlignment="Top" Width="217"/>
+    </Grid>
+</Window>

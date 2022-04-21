@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NetworkService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_INetworkService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Mulle.AzureServiceHost" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Mulle.Lib.Cards" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INetworkService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerChat" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerGameChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerGameChat" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerGameChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerGameChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_GetPlayerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerDetails" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_GetPlayerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_GetAllConnectedPlayers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnectedPlayers" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_GetAllConnectedPlayers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConnectedPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_UploadProfilePicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadProfilePicture" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_UploadProfilePicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadProfilePictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_DownloadProfilePicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadProfilePicture" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_DownloadProfilePicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadProfilePictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerRequestGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerRequestGame" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerRequestGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerRequestGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerConfirmGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerConfirmGame" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PlayerToServerConfirmGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerToServerConfirmGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_RequestMainTableCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestMainTableCards" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_RequestMainTableCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestMainTableCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_RequestPlayerHand_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestPlayerHand" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_RequestPlayerHand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestPlayerHandResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_ServerToPlayerChat_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ServerToPlayerChat" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_ServerToPlayerGameChat_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ServerToPlayerGameChat" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_ServerToPlayerAnnouncement_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ServerToPlayerAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_PushConnectedPlayers_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PushConnectedPlayers" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_ServerToPlayerRequestGame_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ServerToPlayerRequestGame" />
+  </wsdl:message>
+  <wsdl:message name="INetworkService_ServerToPlayerStartGame_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ServerToPlayerStartGame" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="INetworkService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/Login" message="tns:INetworkService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/LoginResponse" message="tns:INetworkService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/Logout" message="tns:INetworkService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/LogoutResponse" message="tns:INetworkService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/Register" message="tns:INetworkService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/RegisterResponse" message="tns:INetworkService_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlayerToServerChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerChat" message="tns:INetworkService_PlayerToServerChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerChatResponse" message="tns:INetworkService_PlayerToServerChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlayerToServerGameChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerGameChat" message="tns:INetworkService_PlayerToServerGameChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerGameChatResponse" message="tns:INetworkService_PlayerToServerGameChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPlayerDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/GetPlayerDetails" message="tns:INetworkService_GetPlayerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/GetPlayerDetailsResponse" message="tns:INetworkService_GetPlayerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllConnectedPlayers">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/GetAllConnectedPlayers" message="tns:INetworkService_GetAllConnectedPlayers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/GetAllConnectedPlayersResponse" message="tns:INetworkService_GetAllConnectedPlayers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UploadProfilePicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/UploadProfilePicture" message="tns:INetworkService_UploadProfilePicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/UploadProfilePictureResponse" message="tns:INetworkService_UploadProfilePicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DownloadProfilePicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/DownloadProfilePicture" message="tns:INetworkService_DownloadProfilePicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/DownloadProfilePictureResponse" message="tns:INetworkService_DownloadProfilePicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlayerToServerRequestGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerRequestGame" message="tns:INetworkService_PlayerToServerRequestGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerRequestGameResponse" message="tns:INetworkService_PlayerToServerRequestGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlayerToServerConfirmGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerConfirmGame" message="tns:INetworkService_PlayerToServerConfirmGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/PlayerToServerConfirmGameResponse" message="tns:INetworkService_PlayerToServerConfirmGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RequestMainTableCards">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/RequestMainTableCards" message="tns:INetworkService_RequestMainTableCards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/RequestMainTableCardsResponse" message="tns:INetworkService_RequestMainTableCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RequestPlayerHand">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetworkService/RequestPlayerHand" message="tns:INetworkService_RequestPlayerHand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/RequestPlayerHandResponse" message="tns:INetworkService_RequestPlayerHand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ServerToPlayerChat">
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/ServerToPlayerChat" message="tns:INetworkService_ServerToPlayerChat_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ServerToPlayerGameChat">
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/ServerToPlayerGameChat" message="tns:INetworkService_ServerToPlayerGameChat_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ServerToPlayerAnnouncement">
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/ServerToPlayerAnnouncement" message="tns:INetworkService_ServerToPlayerAnnouncement_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PushConnectedPlayers">
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/PushConnectedPlayers" message="tns:INetworkService_PushConnectedPlayers_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ServerToPlayerRequestGame">
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/ServerToPlayerRequestGame" message="tns:INetworkService_ServerToPlayerRequestGame_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ServerToPlayerStartGame">
+      <wsdl:output wsaw:Action="http://tempuri.org/INetworkService/ServerToPlayerStartGame" message="tns:INetworkService_ServerToPlayerStartGame_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_INetworkService" type="tns:INetworkService">
+    <wsp:PolicyReference URI="#NetTcpBinding_INetworkService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerToServerChat">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/PlayerToServerChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerToServerGameChat">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/PlayerToServerGameChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerDetails">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/GetPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConnectedPlayers">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/GetAllConnectedPlayers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadProfilePicture">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/UploadProfilePicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadProfilePicture">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/DownloadProfilePicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerToServerRequestGame">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/PlayerToServerRequestGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerToServerConfirmGame">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/PlayerToServerConfirmGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestMainTableCards">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/RequestMainTableCards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestPlayerHand">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/RequestPlayerHand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerToPlayerChat">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/ServerToPlayerChat" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerToPlayerGameChat">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/ServerToPlayerGameChat" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerToPlayerAnnouncement">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/ServerToPlayerAnnouncement" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushConnectedPlayers">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/PushConnectedPlayers" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerToPlayerRequestGame">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/ServerToPlayerRequestGame" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerToPlayerStartGame">
+      <soap12:operation soapAction="http://tempuri.org/INetworkService/ServerToPlayerStartGame" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NetworkService">
+    <wsdl:port name="NetTcpBinding_INetworkService" binding="tns:NetTcpBinding_INetworkService">
+      <soap12:address location="net.tcp://127.255.0.0:9001/NetworkService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://127.255.0.0:9001/NetworkService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

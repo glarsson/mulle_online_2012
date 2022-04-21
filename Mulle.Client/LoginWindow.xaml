@@ -1,0 +1,24 @@
+﻿<Window x:Class="Mulle.Client.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mulle Online" Height="350" Width="712" Icon="mulle.ico">
+    <Grid x:Name="Grid">
+    	<Grid.Background>
+    		<ImageBrush ImageSource="pack://siteoforigin:,,,/login_bg.png"/>
+    	</Grid.Background>
+        <Label Content="Alias" HorizontalAlignment="Left" Margin="321,14,0,0" VerticalAlignment="Top" Width="93" Foreground="White" FontFamily="Arial" FontSize="14.667" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="22"/>
+        <TextBox x:Name="loginAlias" HorizontalAlignment="Left" Height="22" Margin="419,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Arial"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="321,41,0,0" VerticalAlignment="Top" Width="93" Foreground="White" FontFamily="Arial" FontSize="14.667" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="22"/>
+        <TextBox x:Name="loginPassword" HorizontalAlignment="Left" Height="22" Margin="419,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Arial"/>
+        <Button Content="Login" HorizontalAlignment="Left" Height="23" Margin="567,41,0,0" VerticalAlignment="Top" Width="122" Click="LoginButtonClick" FontFamily="Arial" FontSize="14.667"/>
+
+        <Label Content="Alias" HorizontalAlignment="Left" Margin="321,234,0,0" VerticalAlignment="Top" Width="93" Foreground="White" FontFamily="Arial" FontSize="14.667" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="22"/>
+        <TextBox x:Name="registerAlias" HorizontalAlignment="Left" Height="22" Margin="419,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Arial"/>
+        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="321,261,0,0" VerticalAlignment="Top" Width="93" Foreground="White" FontFamily="Arial" FontSize="14.667" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="22"/>
+        <TextBox x:Name="registerEmail" HorizontalAlignment="Left" Height="22" Margin="419,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Arial"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="321,288,0,0" VerticalAlignment="Top" Width="93" Foreground="White" FontFamily="Arial" FontSize="14.667" HorizontalContentAlignment="Right" Height="22" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="registerPassword" HorizontalAlignment="Left" Height="22" Margin="419,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Arial"/>
+        <Button Content="Register" HorizontalAlignment="Left" Height="24" Margin="567,286,0,0" VerticalAlignment="Top" Width="122" Click="RegisterButtonClick" FontFamily="Arial" FontSize="14.667"/>
+        <Label Content="Mulle Online" HorizontalAlignment="Left" Margin="21,109,0,0" VerticalAlignment="Top" FontSize="96" FontFamily="Buxton Sketch" Height="125" Width="423.26"/>
+     </Grid>
+</Window>

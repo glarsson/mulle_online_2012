@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mulle.AzureServiceHost" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mulle.AzureServiceHost" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="RegisterStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="EmailInUse" />
+      <xs:enumeration value="AliasInUse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RegisterStatus" nillable="true" type="tns:RegisterStatus" />
+  <xs:complexType name="PlayerContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Loss" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="Reputation" type="xs:int" />
+      <xs:element minOccurs="0" name="Win" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerContract" nillable="true" type="tns:PlayerContract" />
+  <xs:complexType name="ArrayOfPlayerContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerContract" nillable="true" type="tns:PlayerContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerContract" nillable="true" type="tns:ArrayOfPlayerContract" />
+</xs:schema>
